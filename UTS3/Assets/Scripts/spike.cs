@@ -6,7 +6,7 @@ public class spike : MonoBehaviour
 {
     public int damageAmount = 100;
     public float knockbackForce = 5f;
-    //public PlayerHealth player;
+    public GameObject players;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -17,6 +17,8 @@ public class spike : MonoBehaviour
             {
                 // Kurangi darah player
                 player.TakeDamage(damageAmount);
+                players.SetActive(false);
+
                 //Debug.Log("mati");
 
                 // Terapkan knockback
